@@ -328,4 +328,9 @@ class Money
 
         return (int) $units;
     }
+
+    public function __toString()
+    {
+        return $this->getCurrency()->getName() . ' ' . $this->getAmount();
+    }
 }

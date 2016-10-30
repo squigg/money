@@ -270,12 +270,17 @@ class MoneyTest extends PHPUnit_Framework_TestCase
     {
         $this->assertEquals($units, Money::stringToUnits($string));
     }
-    
+
     /**
      * @expectedException \Money\InvalidArgumentException
      */
     public function testInvalidStringToUnit()
     {
         Money::stringToUnits('This should be an invalid string');
+    }
+
+    public function testToStringMethod()
+    {
+        $this->assertEquals('EUR 4001', (string)Money::EUR(4001));
     }
 }
